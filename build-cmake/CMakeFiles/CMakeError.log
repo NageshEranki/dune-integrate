@@ -1,0 +1,465 @@
+Determining if the std::identity exist failed with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3d099/fast && /usr/bin/make  -f CMakeFiles/cmTC_3d099.dir/build.make CMakeFiles/cmTC_3d099.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3d099.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++17   -fPIE -o CMakeFiles/cmTC_3d099.dir/CheckSymbolExists.cxx.o -c /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:7:24: error: ‘identity’ is not a member of ‘std’
+    7 |   return ((int*)(&std::identity))[argc];
+      |                        ^~~~~~~~
+make[1]: *** [CMakeFiles/cmTC_3d099.dir/build.make:85: CMakeFiles/cmTC_3d099.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_3d099/fast] Error 2
+
+
+File /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <functional>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+  return ((int*)(&std::identity))[argc];
+}
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_55557/fast && /usr/bin/make  -f CMakeFiles/cmTC_55557.dir/build.make CMakeFiles/cmTC_55557.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_55557.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_55557.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_55557
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55557.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_55557.dir/test_mpi.c.o -o cmTC_55557  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_55557.dir/build.make:116: cmTC_55557] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_55557/fast] Error 2
+
+
+
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b33f8/fast && /usr/bin/make  -f CMakeFiles/cmTC_b33f8.dir/build.make CMakeFiles/cmTC_b33f8.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b33f8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_ -fPIE -o CMakeFiles/cmTC_b33f8.dir/CheckFunctionExists.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b33f8
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b33f8.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sgemm_ CMakeFiles/cmTC_b33f8.dir/CheckFunctionExists.c.o -o cmTC_b33f8 
+/usr/bin/ld: CMakeFiles/cmTC_b33f8.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_b33f8.dir/build.make:106: cmTC_b33f8] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_b33f8/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2f148/fast && /usr/bin/make  -f CMakeFiles/cmTC_2f148.dir/build.make CMakeFiles/cmTC_2f148.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2f148.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD -fPIE -o CMakeFiles/cmTC_2f148.dir/src.c.o -c /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2f148
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f148.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD CMakeFiles/cmTC_2f148.dir/src.c.o -o cmTC_2f148 
+/usr/bin/ld: CMakeFiles/cmTC_2f148.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_2f148.dir/build.make:106: cmTC_2f148] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_2f148/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1afbd/fast && /usr/bin/make  -f CMakeFiles/cmTC_1afbd.dir/build.make CMakeFiles/cmTC_1afbd.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1afbd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -fPIE -o CMakeFiles/cmTC_1afbd.dir/CheckFunctionExists.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1afbd
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1afbd.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_1afbd.dir/CheckFunctionExists.c.o -o cmTC_1afbd  /usr/lib/x86_64-linux-gnu/libblas.so -pthread -lm -ldl 
+/usr/bin/ld: CMakeFiles/cmTC_1afbd.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `cheev_'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_1afbd.dir/build.make:107: cmTC_1afbd] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_1afbd/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test TBB_COMPILE_TEST failed with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_55fd6/fast && /usr/bin/make  -f CMakeFiles/cmTC_55fd6.dir/build.make CMakeFiles/cmTC_55fd6.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_55fd6.dir/src.cxx.o
+/usr/bin/c++ -D_TBB_CPP0X  -std=c++17  -DTBB_COMPILE_TEST -fPIE -o CMakeFiles/cmTC_55fd6.dir/src.cxx.o -c /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp/src.cxx
+/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: tbb/tbb.h: No such file or directory
+    2 | #include <tbb/tbb.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_55fd6.dir/build.make:85: CMakeFiles/cmTC_55fd6.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_55fd6/fast] Error 2
+
+
+Source file was:
+
+#include <tbb/tbb.h>
+#include <numeric>
+
+int main()
+{
+  int x[10] = {0};
+  tbb::parallel_for(0,10,[&](int i){ x[i] = i; });
+  return !(std::accumulate(x,x+10,0) == (9*10)/2);
+}
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_00563/fast && /usr/bin/make  -f CMakeFiles/cmTC_00563.dir/build.make CMakeFiles/cmTC_00563.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_00563.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_00563.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_00563
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00563.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_00563.dir/test_mpi.c.o -o cmTC_00563  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_00563.dir/build.make:116: cmTC_00563] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_00563/fast] Error 2
+
+
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_98521/fast && /usr/bin/make  -f CMakeFiles/cmTC_98521.dir/build.make CMakeFiles/cmTC_98521.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_98521.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_98521.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_98521
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98521.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_98521.dir/test_mpi.c.o -o cmTC_98521  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_98521.dir/build.make:116: cmTC_98521] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_98521/fast] Error 2
+
+
+
+Determing location of ARPACK failed:
+Libraries to link against: 
+
+Determing location of ARPACK++ failed:
+Include directory: 
+Libraries to link against: 
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_03b8c/fast && /usr/bin/make  -f CMakeFiles/cmTC_03b8c.dir/build.make CMakeFiles/cmTC_03b8c.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_03b8c.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_03b8c.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_03b8c
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03b8c.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_03b8c.dir/test_mpi.c.o -o cmTC_03b8c  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_03b8c.dir/build.make:116: cmTC_03b8c] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_03b8c/fast] Error 2
+
+
+
+Determining location of psurface failed:
+Include directory: 
+Library directory: 
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6cb04/fast && /usr/bin/make  -f CMakeFiles/cmTC_6cb04.dir/build.make CMakeFiles/cmTC_6cb04.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6cb04.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_6cb04.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_6cb04
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6cb04.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_6cb04.dir/test_mpi.c.o -o cmTC_6cb04  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_6cb04.dir/build.make:116: cmTC_6cb04] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_6cb04/fast] Error 2
+
+
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d02a7/fast && /usr/bin/make  -f CMakeFiles/cmTC_d02a7.dir/build.make CMakeFiles/cmTC_d02a7.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d02a7.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_d02a7.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_d02a7
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d02a7.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_d02a7.dir/test_mpi.c.o -o cmTC_d02a7  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_d02a7.dir/build.make:116: cmTC_d02a7] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_d02a7/fast] Error 2
+
+
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_54b85/fast && /usr/bin/make  -f CMakeFiles/cmTC_54b85.dir/build.make CMakeFiles/cmTC_54b85.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_54b85.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_54b85.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_54b85
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54b85.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_54b85.dir/test_mpi.c.o -o cmTC_54b85  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_54b85.dir/build.make:116: cmTC_54b85] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_54b85/fast] Error 2
+
+
+
+Determing location of ARPACK failed:
+Libraries to link against: 
+
+Determing location of ARPACK++ failed:
+Include directory: 
+Libraries to link against: 
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_74bfb/fast && /usr/bin/make  -f CMakeFiles/cmTC_74bfb.dir/build.make CMakeFiles/cmTC_74bfb.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_74bfb.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_74bfb.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_74bfb
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74bfb.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_74bfb.dir/test_mpi.c.o -o cmTC_74bfb  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_74bfb.dir/build.make:116: cmTC_74bfb] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_74bfb/fast] Error 2
+
+
+
+Determining location of psurface failed:
+Include directory: 
+Library directory: 
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_82a7b/fast && /usr/bin/make  -f CMakeFiles/cmTC_82a7b.dir/build.make CMakeFiles/cmTC_82a7b.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_82a7b.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_82a7b.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_82a7b
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_82a7b.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_82a7b.dir/test_mpi.c.o -o cmTC_82a7b  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_82a7b.dir/build.make:116: cmTC_82a7b] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_82a7b/fast] Error 2
+
+
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_855b8/fast && /usr/bin/make  -f CMakeFiles/cmTC_855b8.dir/build.make CMakeFiles/cmTC_855b8.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_855b8.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_855b8.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_855b8
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_855b8.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_855b8.dir/test_mpi.c.o -o cmTC_855b8  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_855b8.dir/build.make:116: cmTC_855b8] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_855b8/fast] Error 2
+
+
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f92d1/fast && /usr/bin/make  -f CMakeFiles/cmTC_f92d1.dir/build.make CMakeFiles/cmTC_f92d1.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f92d1.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_f92d1.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_f92d1
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f92d1.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_f92d1.dir/test_mpi.c.o -o cmTC_f92d1  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_f92d1.dir/build.make:116: cmTC_f92d1] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_f92d1/fast] Error 2
+
+
+
+Determing location of ARPACK failed:
+Libraries to link against: 
+
+Determing location of ARPACK++ failed:
+Include directory: 
+Libraries to link against: 
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f2889/fast && /usr/bin/make  -f CMakeFiles/cmTC_f2889.dir/build.make CMakeFiles/cmTC_f2889.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f2889.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_f2889.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_f2889
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2889.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_f2889.dir/test_mpi.c.o -o cmTC_f2889  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_f2889.dir/build.make:116: cmTC_f2889] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_f2889/fast] Error 2
+
+
+
+Determining location of psurface failed:
+Include directory: 
+Library directory: 
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2aa0f/fast && /usr/bin/make  -f CMakeFiles/cmTC_2aa0f.dir/build.make CMakeFiles/cmTC_2aa0f.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2aa0f.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_2aa0f.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_2aa0f
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2aa0f.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_2aa0f.dir/test_mpi.c.o -o cmTC_2aa0f  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_2aa0f.dir/build.make:116: cmTC_2aa0f] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_2aa0f/fast] Error 2
+
+
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_122c0/fast && /usr/bin/make  -f CMakeFiles/cmTC_122c0.dir/build.make CMakeFiles/cmTC_122c0.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_122c0.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_122c0.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_122c0
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_122c0.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_122c0.dir/test_mpi.c.o -o cmTC_122c0  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_122c0.dir/build.make:116: cmTC_122c0] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_122c0/fast] Error 2
+
+
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8fa45/fast && /usr/bin/make  -f CMakeFiles/cmTC_8fa45.dir/build.make CMakeFiles/cmTC_8fa45.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8fa45.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_8fa45.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_8fa45
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8fa45.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_8fa45.dir/test_mpi.c.o -o cmTC_8fa45  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_8fa45.dir/build.make:116: cmTC_8fa45] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_8fa45/fast] Error 2
+
+
+
+Determing location of ARPACK failed:
+Libraries to link against: 
+
+Determing location of ARPACK++ failed:
+Include directory: 
+Libraries to link against: 
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bf173/fast && /usr/bin/make  -f CMakeFiles/cmTC_bf173.dir/build.make CMakeFiles/cmTC_bf173.dir/build
+make[1]: Entering directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bf173.dir/test_mpi.c.o
+/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -fPIE -pthread -o CMakeFiles/cmTC_bf173.dir/test_mpi.c.o -c /home/munna/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.18/Modules/FindMPI/test_mpi.c
+Linking C executable cmTC_bf173
+/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf173.dir/link.txt --verbose=1
+/usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib -pthread CMakeFiles/cmTC_bf173.dir/test_mpi.c.o -o cmTC_bf173  -lMPI_mpi_LIBRARY-NOTFOUND /usr/lib/x86_64-linux-gnu/libopen-rte.so /usr/lib/x86_64-linux-gnu/libopen-pal.so /usr/lib/x86_64-linux-gnu/libhwloc.so /usr/lib/x86_64-linux-gnu/libdl.so /usr/lib/x86_64-linux-gnu/libevent.so /usr/lib/x86_64-linux-gnu/libevent_pthreads.so /usr/lib/x86_64-linux-gnu/libutil.so -lm /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libz.so 
+/usr/bin/ld: cannot find -lMPI_mpi_LIBRARY-NOTFOUND
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_bf173.dir/build.make:116: cmTC_bf173] Error 1
+make[1]: Leaving directory '/home/munna/dune/dune-integrate/build-cmake/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_bf173/fast] Error 2
+
+
+
+Determining location of psurface failed:
+Include directory: 
+Library directory: 
+

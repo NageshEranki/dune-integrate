@@ -1,0 +1,6 @@
+important headers to understand required classes and their members/methods:
+
+	1. grid/common/geometry.hh
+	2. grid/common/gridview.hh
+	3. functions/functionspacebases/defaultglobalbasis.hh
+	4.  

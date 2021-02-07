@@ -1,0 +1,12 @@
+################################
+# Dune module information file #
+################################
+
+# Name of the module
+Module: dune-integrate
+Version: 1.0
+Maintainer: nageswararao.160324@gmail.com
+# Required build dependencies
+Depends: dune-common dune-geometry dune-grid dune-istl dune-localfunctions dune-functions
+# Optional build dependencies
+#Suggests:

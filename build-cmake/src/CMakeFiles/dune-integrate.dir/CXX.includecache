@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/munna/dune/dune-integrate/src/dune-integrate.cc
+config.h
+/home/munna/dune/dune-integrate/src/config.h
+iostream
+-
+vector
+-
+dune/common/parallel/mpihelper.hh
+-
+dune/common/exceptions.hh
+-
+dune/grid/yaspgrid.hh
+-
+dune/geometry/quadraturerules.hh
+-
+dune/localfunctions/lagrange.hh
+-
+dune/functions/functionspacebases/lagrangebasis.hh
+-
+dune/common/fvector.hh
+-
+dune/istl/io.hh
+-
+dune/istl/bcrsmatrix.hh
+-
+
+config.h
+
