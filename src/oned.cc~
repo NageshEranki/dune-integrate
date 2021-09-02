@@ -169,7 +169,7 @@ int main(int argc, char** argv)
 	// Solve!
 	cg.apply(x,F,stat);
 
-	Dune::printvector(std::cout,x,"Load Vector","");
+	Dune::printvector(std::cout,x,"Solution","");
 
 	// Write one dimensional solution
 	// to file, handle with Gnuplot
