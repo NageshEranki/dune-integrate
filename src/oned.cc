@@ -154,7 +154,6 @@ int main(int argc, char** argv)
 	//
 	
 
-
 	Dune::printmatrix(std::cout,K,"Stiffness Matrix","");
 	Dune::printvector(std::cout,F,"Load Vector","");
 
