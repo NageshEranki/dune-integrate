@@ -121,17 +121,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -153,6 +142,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -185,6 +185,36 @@ preinstall/fast:
 depend:
 	cd /home/munna/dune/dune-integrate/build-cmake && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+src/CMakeFiles/oned.dir/rule:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/oned.dir/rule
+.PHONY : src/CMakeFiles/oned.dir/rule
+
+# Convenience name for target.
+oned: src/CMakeFiles/oned.dir/rule
+
+.PHONY : oned
+
+# fast build rule for target.
+oned/fast:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/oned.dir/build.make src/CMakeFiles/oned.dir/build
+.PHONY : oned/fast
+
+# Convenience name for target.
+src/CMakeFiles/mk2.dir/rule:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mk2.dir/rule
+.PHONY : src/CMakeFiles/mk2.dir/rule
+
+# Convenience name for target.
+mk2: src/CMakeFiles/mk2.dir/rule
+
+.PHONY : mk2
+
+# fast build rule for target.
+mk2/fast:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mk2.dir/build.make src/CMakeFiles/mk2.dir/build
+.PHONY : mk2/fast
 
 # Convenience name for target.
 src/CMakeFiles/dune-integrate.dir/rule:
@@ -228,6 +258,60 @@ dune-integrate.cc.s:
 	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/dune-integrate.dir/build.make src/CMakeFiles/dune-integrate.dir/dune-integrate.cc.s
 .PHONY : dune-integrate.cc.s
 
+oned.o: oned.cc.o
+
+.PHONY : oned.o
+
+# target to build an object file
+oned.cc.o:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/oned.dir/build.make src/CMakeFiles/oned.dir/oned.cc.o
+.PHONY : oned.cc.o
+
+oned.i: oned.cc.i
+
+.PHONY : oned.i
+
+# target to preprocess a source file
+oned.cc.i:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/oned.dir/build.make src/CMakeFiles/oned.dir/oned.cc.i
+.PHONY : oned.cc.i
+
+oned.s: oned.cc.s
+
+.PHONY : oned.s
+
+# target to generate assembly for a file
+oned.cc.s:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/oned.dir/build.make src/CMakeFiles/oned.dir/oned.cc.s
+.PHONY : oned.cc.s
+
+test.o: test.cc.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.cc.o:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mk2.dir/build.make src/CMakeFiles/mk2.dir/test.cc.o
+.PHONY : test.cc.o
+
+test.i: test.cc.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cc.i:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mk2.dir/build.make src/CMakeFiles/mk2.dir/test.cc.i
+.PHONY : test.cc.i
+
+test.s: test.cc.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cc.s:
+	cd /home/munna/dune/dune-integrate/build-cmake && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mk2.dir/build.make src/CMakeFiles/mk2.dir/test.cc.s
+.PHONY : test.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -242,9 +326,17 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... dune-integrate"
+	@echo "... mk2"
+	@echo "... oned"
 	@echo "... dune-integrate.o"
 	@echo "... dune-integrate.i"
 	@echo "... dune-integrate.s"
+	@echo "... oned.o"
+	@echo "... oned.i"
+	@echo "... oned.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

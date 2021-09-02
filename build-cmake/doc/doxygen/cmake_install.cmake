@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "/home/munna/dune")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -50,13 +50,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
           /home/munna/dune/dune-integrate/build-cmake/doc/doxygen/html/*.js
           /home/munna/dune/dune-integrate/build-cmake/doc/doxygen/html/*.png
           /home/munna/dune/dune-integrate/build-cmake/doc/doxygen/html/*.css
-          /home/munna/dune/dune-integrate/build-cmake/doc/doxygen/html/*.gif)
+          /home/munna/dune/dune-integrate/build-cmake/doc/doxygen/html/*.gif
+          /home/munna/dune/dune-integrate/build-cmake/doc/doxygen/*.tag
+          )
         set(doxygenfiles "${doxygenfiles}")
         foreach(_file ${doxygenfiles})
            get_filename_component(_basename ${_file} NAME)
-           LIST(APPEND CMAKE_INSTALL_MANIFEST_FILES /usr/local/share/doc/dune-integrate/doxygen/${_basename})
+           LIST(APPEND CMAKE_INSTALL_MANIFEST_FILES /home/munna/dune/share/doc/dune-integrate/doxygen/${_basename})
          endforeach()
-         file(INSTALL ${doxygenfiles} DESTINATION /usr/local/share/doc/dune-integrate/doxygen)
-         message(STATUS "Installed doxygen into /usr/local/share/doc/dune-integrate/doxygen")
+         file(INSTALL ${doxygenfiles} DESTINATION /home/munna/dune/share/doc/dune-integrate/doxygen)
+         message(STATUS "Installed doxygen into /home/munna/dune/share/doc/dune-integrate/doxygen")
 endif()
 

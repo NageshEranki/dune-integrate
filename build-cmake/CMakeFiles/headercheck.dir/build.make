@@ -73,7 +73,7 @@ CMAKE_BINARY_DIR = /home/munna/dune/dune-integrate/build-cmake
 include CMakeFiles/headercheck.dir/progress.make
 
 CMakeFiles/headercheck:
-	/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -DENABLE_HEADERCHECK= -P /usr/local/share/dune/cmake/scripts/FinalizeHeadercheck.cmake
+	/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -DENABLE_HEADERCHECK= -P /home/munna/dune/dune-common/cmake/scripts/FinalizeHeadercheck.cmake
 
 headercheck: CMakeFiles/headercheck
 headercheck: CMakeFiles/headercheck.dir/build.make

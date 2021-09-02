@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "/home/munna/dune")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,8 +43,8 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  set(CMAKE_MODULE_PATH /home/munna/dune/dune-integrate/cmake/modules;/usr/local/share/dune/cmake/modules;/usr/local/share/dune/cmake/modules;/usr/local/share/dune/cmake/modules;/usr/local/share/dune/cmake/modules;/usr/local/share/dune/cmake/modules;/usr/local/share/dune/cmake/modules;/usr/local/share/dune/cmake/modules;/usr/local/share/dune/cmake/modules)
-              set(DUNE_PYTHON_WHEELHOUSE /usr/local/share/dune/wheelhouse)
+  set(CMAKE_MODULE_PATH /home/munna/dune/dune-vtk/cmake/modules;/home/munna/dune/dune-functions/cmake/modules;/home/munna/dune/dune-localfunctions/cmake/modules;/home/munna/dune/dune-grid/cmake/modules;/home/munna/dune/dune-istl/cmake/modules;/home/munna/dune/dune-typetree/cmake/modules;/home/munna/dune/dune-uggrid/cmake/modules;/home/munna/dune/dune-geometry/cmake/modules;/home/munna/dune/dune-common/cmake/modules;/home/munna/dune/dune-integrate/cmake/modules;/home/munna/dune/dune-common/cmake/modules/FindPkgConfig;/home/munna/dune/dune-common/cmake/modules/FindPython3)
+              set(DUNE_PYTHON_WHEELHOUSE /home/munna/dune/share/dune/wheelhouse)
               include(DuneExecuteProcess)
               dune_execute_process(COMMAND "/home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake" --build . --target install_python --config $<CONFIG>)
               

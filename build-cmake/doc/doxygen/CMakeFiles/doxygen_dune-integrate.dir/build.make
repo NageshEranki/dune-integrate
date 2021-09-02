@@ -77,13 +77,13 @@ doc/doxygen/CMakeFiles/doxygen_dune-integrate: doc/doxygen/html
 
 doc/doxygen/html: doc/doxygen/Doxyfile.in
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/munna/dune/dune-integrate/build-cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building doxygen documentation. This may take a while"
-	cd /home/munna/dune/dune-integrate/build-cmake/doc/doxygen && /home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -D DOXYGEN_EXECUTABLE=/usr/bin/doxygen -P /usr/local/share/dune/cmake/scripts/RunDoxygen.cmake
+	cd /home/munna/dune/dune-integrate/build-cmake/doc/doxygen && /home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -D DOXYGEN_EXECUTABLE=/usr/bin/doxygen -P /home/munna/dune/dune-common/cmake/scripts/RunDoxygen.cmake
 
-doc/doxygen/Doxyfile.in: /usr/local/share/dune-common/doc/doxygen/Doxystyle
-doc/doxygen/Doxyfile.in: /usr/local/share/dune-common/doc/doxygen/doxygen-macros
+doc/doxygen/Doxyfile.in: /home/munna/dune/dune-common/doc/doxygen/Doxystyle
+doc/doxygen/Doxyfile.in: /home/munna/dune/dune-common/doc/doxygen/doxygen-macros
 doc/doxygen/Doxyfile.in: ../doc/doxygen/Doxylocal
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/munna/dune/dune-integrate/build-cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Creating Doxyfile.in"
-	cd /home/munna/dune/dune-integrate/build-cmake/doc/doxygen && /home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -D DOT_TRUE= -D DUNE_MOD_NAME=dune-integrate -D DUNE_MOD_VERSION=1.0 -D DOXYSTYLE=/usr/local/share/dune-common/doc/doxygen//Doxystyle -D DOXYGENMACROS=/usr/local/share/dune-common/doc/doxygen//doxygen-macros -D DOXYLOCAL=/home/munna/dune/dune-integrate/doc/doxygen/Doxylocal -D abs_top_srcdir=/home/munna/dune/dune-integrate -D srcdir=/home/munna/dune/dune-integrate/doc/doxygen -D top_srcdir=/home/munna/dune/dune-integrate -P /usr/local/share/dune/cmake/scripts/CreateDoxyFile.cmake
+	cd /home/munna/dune/dune-integrate/build-cmake/doc/doxygen && /home/munna/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -D DOT_TRUE= -D DUNE_MOD_NAME=dune-integrate -D DUNE_MOD_VERSION=1.0 -D DOXYSTYLE=/home/munna/dune/dune-common/doc/doxygen/Doxystyle -D DOXYGENMACROS=/home/munna/dune/dune-common/doc/doxygen/doxygen-macros -D DOXYLOCAL=/home/munna/dune/dune-integrate/doc/doxygen/Doxylocal -D abs_top_srcdir=/home/munna/dune/dune-integrate -D srcdir=/home/munna/dune/dune-integrate/doc/doxygen -D top_srcdir=/home/munna/dune/dune-integrate -P /home/munna/dune/dune-common/cmake/scripts/CreateDoxyFile.cmake
 
 doc/doxygen/Doxyfile: doc/doxygen/Doxyfile.in
 	@$(CMAKE_COMMAND) -E touch_nocreate doc/doxygen/Doxyfile

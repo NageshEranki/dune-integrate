@@ -10,12 +10,12 @@
 #define HAVE_DUNE_COMMON 1
 
 
-/* Define to 1 if you have module dune-uggrid available */
-#define HAVE_DUNE_UGGRID 1
-
-
 /* Define to 1 if you have module dune-geometry available */
 #define HAVE_DUNE_GEOMETRY 1
+
+
+/* Define to 1 if you have module dune-uggrid available */
+#define HAVE_DUNE_UGGRID 1
 
 
 /* Define to 1 if you have module dune-typetree available */
@@ -34,8 +34,28 @@
 #define HAVE_DUNE_LOCALFUNCTIONS 1
 
 
+/* Define to 1 if you have module dune-foamgrid available */
+#define HAVE_DUNE_FOAMGRID 0
+
+
+/* Define to 1 if you have module dune-alugrid available */
+#define HAVE_DUNE_ALUGRID 0
+
+
+/* Define to 1 if you have module dune-polygongrid available */
+#define HAVE_DUNE_POLYGONGRID 0
+
+
+/* Define to 1 if you have module dune-spgrid available */
+#define HAVE_DUNE_SPGRID 0
+
+
 /* Define to 1 if you have module dune-functions available */
 #define HAVE_DUNE_FUNCTIONS 1
+
+
+/* Define to 1 if you have module dune-vtk available */
+#define HAVE_DUNE_VTK 1
 
 
 /* begin private */
@@ -63,21 +83,6 @@
 /* does the compiler support __attribute__((unused))? */
 #define HAS_ATTRIBUTE_UNUSED 1
 
-/* does the standard library provide <experimental/type_traits> ? */
-#define DUNE_HAVE_HEADER_EXPERIMENTAL_TYPE_TRAITS 1
-
-/* does the standard library provide bool_constant ? */
-#define DUNE_HAVE_CXX_BOOL_CONSTANT 1
-
-/* does the standard library provide experimental::bool_constant ? */
-/* #undef DUNE_HAVE_CXX_EXPERIMENTAL_BOOL_CONSTANT */
-
-/* does the standard library provide apply() ? */
-#define DUNE_HAVE_CXX_APPLY 1
-
-/* does the standard library provide experimental::apply() ? */
-/* #undef DUNE_HAVE_CXX_EXPERIMENTAL_APPLY */
-
 /* does the standard library provide experimental::make_array() ? */
 #define DUNE_HAVE_CXX_EXPERIMENTAL_MAKE_ARRAY 1
 
@@ -90,21 +95,24 @@
 /* Define if you have a BLAS library. */
 #define HAVE_BLAS 1
 
-/* does the compiler support abi::__cxa_demangle */
-#define HAVE_CXA_DEMANGLE 1
-
 /* Define if you have LAPACK library. */
 #define HAVE_LAPACK 1
-
-/* Define to 1 if you have the <malloc.h> header file. */
-// Not used! #define HAVE_MALLOC_H 0
 
 /* Define if you have the MPI library.  */
 /* #undef HAVE_MPI */
 
+/* Deactivate cxx bindings for MPI */
+#if HAVE_MPI
+#define MPICH_SKIP_MPICXX 1
+#define OMPI_SKIP_MPICXX 1
+#define MPI_NO_CPPBIND 1
+#define MPIPP_H
+#define _MPICC_H
+#endif
+
 /* Define if you have the GNU GMP library. The value should be ENABLE_GMP
    to facilitate activating and deactivating GMP using compile flags. */
-/* #undef HAVE_GMP */
+#define HAVE_GMP ENABLE_GMP
 
 /* Define if you have the GCC Quad-Precision library. The value should be ENABLE_QUADMATH
    to facilitate activating and deactivating QuadMath using compile flags. */
@@ -113,15 +121,6 @@
 /* Define if you have the Vc library. The value should be ENABLE_VC
    to facilitate activating and deactivating Vc using compile flags. */
 /* #undef HAVE_VC */
-
-/* Define to 1 if you have the symbol mprotect. */
-#define HAVE_MPROTECT 1
-
-/* Define to 1 if you have the <stdint.h> header file. */
-/* #undef HAVE_STDINT_H */
-
-/* Define to 1 if you have <sys/mman.h>. */
-#define HAVE_SYS_MMAN_H 1
 
 /* Define to 1 if you have the Threading Building Blocks (TBB) library */
 /* #undef HAVE_TBB */
@@ -137,9 +136,11 @@
 #define DUNE_HAVE_CXX_VARIANT 1
 #define DUNE_SUPPORTS_CXX_THROW_IN_CONSTEXPR 1
 #define DUNE_HAVE_C_ALIGNED_ALLOC 1
-
-
-/* Define to 1 if the compiler properly supports testing for operator[] */
+#define DUNE_HAVE_CXX_BOOL_CONSTANT 1
+#define DUNE_HAVE_CXX_EXPERIMENTAL_BOOL_CONSTANT 0
+#define DUNE_HAVE_HEADER_EXPERIMENTAL_TYPE_TRAITS 0
+#define DUNE_HAVE_CXX_APPLY 1
+#define DUNE_HAVE_CXX_EXPERIMENTAL_APPLY 0
 #define HAVE_IS_INDEXABLE_SUPPORT 1
 
 /* Define to ENABLE_UMFPACK if the UMFPack library is available */
@@ -203,13 +204,21 @@
 /* Used to call lapack functions */
 #define LAPACK_NEEDS_UNDERLINE
 
-#ifdef LAPACK_NEEDS_UNDERLINE
-  #define LAPACK_MANGLE(name,NAME) name##_
-#else
-  #define LAPACK_MANGLE(name,NAME) name
-#endif
 
-#define FC_FUNC LAPACK_MANGLE
+
+
+
+/* Define to the version of dune-geometry */
+#define DUNE_GEOMETRY_VERSION "2.8-git"
+
+/* Define to the major version of dune-geometry */
+#define DUNE_GEOMETRY_VERSION_MAJOR 2
+
+/* Define to the minor version of dune-geometry */
+#define DUNE_GEOMETRY_VERSION_MINOR 8
+
+/* Define to the revision of dune-geometry */
+#define DUNE_GEOMETRY_VERSION_REVISION 0
 
 
 
@@ -236,28 +245,7 @@
 /* Define to 1 if UGGrid should use the complete set of green refinement rules for tetrahedra */
 /* #undef DUNE_UGGRID_TET_RULESET */
 
-/* Define to 1 if rpc/rpc.h is found (needed for xdr). */
-#ifndef HAVE_RPC_RPC_H
-#define HAVE_RPC_RPC_H 1
-#endif
-
 /* end private section */
-
-
-
-
-
-/* Define to the version of dune-geometry */
-#define DUNE_GEOMETRY_VERSION "2.8-git"
-
-/* Define to the major version of dune-geometry */
-#define DUNE_GEOMETRY_VERSION_MAJOR 2
-
-/* Define to the minor version of dune-geometry */
-#define DUNE_GEOMETRY_VERSION_MINOR 8
-
-/* Define to the revision of dune-geometry */
-#define DUNE_GEOMETRY_VERSION_REVISION 0
 
 
 
@@ -331,7 +319,7 @@
 /* #undef HAVE_PSURFACE_2_0 */
 
 /* Alberta version found by configure, either 0x200 for 2.0 or 0x300 for 3.0 */
-#define DUNE_ALBERTA_VERSION 0x300
+/* #undef DUNE_ALBERTA_VERSION */
 
 /* This is only true if alberta-library was found by configure _and_ if the
    application uses the ALBERTA_CPPFLAGS */
@@ -378,6 +366,26 @@
 
 /* Define to the revision of dune-functions */
 #define DUNE_FUNCTIONS_VERSION_REVISION 0
+
+
+
+
+
+
+/* Define to the version of dune-vtk */
+#define DUNE_VTK_VERSION "0.2"
+
+/* Define to the major version of dune-vtk */
+#define DUNE_VTK_VERSION_MAJOR 0
+
+/* Define to the minor version of dune-vtk */
+#define DUNE_VTK_VERSION_MINOR 2
+
+/* Define to the revision of dune-vtk */
+#define DUNE_VTK_VERSION_REVISION 0
+
+/* Define if you have the ZLIB library.  */
+#define HAVE_VTK_ZLIB ENABLE_VTK_ZLIB
 
 
 

@@ -1,0 +1,6 @@
+sanity checks for:
+	1. quadrature rule -- DONE
+	2. element stiffness matrix
+	3. element force vector
+	4. shape function on element nodes
+	5. shape function derivatives

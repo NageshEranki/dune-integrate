@@ -227,6 +227,8 @@ dune/integrate/clean:
 # Directory level rules for directory src
 
 # Recursive "all" directory target.
+src/all: src/CMakeFiles/oned.dir/all
+src/all: src/CMakeFiles/mk2.dir/all
 src/all: src/CMakeFiles/dune-integrate.dir/all
 
 .PHONY : src/all
@@ -237,6 +239,8 @@ src/preinstall:
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
+src/clean: src/CMakeFiles/oned.dir/clean
+src/clean: src/CMakeFiles/mk2.dir/clean
 src/clean: src/CMakeFiles/dune-integrate.dir/clean
 
 .PHONY : src/clean
@@ -1239,6 +1243,60 @@ ContinuousUpdate: CMakeFiles/ContinuousUpdate.dir/rule
 CMakeFiles/ContinuousUpdate.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ContinuousUpdate.dir/build.make CMakeFiles/ContinuousUpdate.dir/clean
 .PHONY : CMakeFiles/ContinuousUpdate.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/oned.dir
+
+# All Build rule for target.
+src/CMakeFiles/oned.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/oned.dir/build.make src/CMakeFiles/oned.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/oned.dir/build.make src/CMakeFiles/oned.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/munna/dune/dune-integrate/build-cmake/CMakeFiles --progress-num=8,9 "Built target oned"
+.PHONY : src/CMakeFiles/oned.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/oned.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/munna/dune/dune-integrate/build-cmake/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/oned.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/munna/dune/dune-integrate/build-cmake/CMakeFiles 0
+.PHONY : src/CMakeFiles/oned.dir/rule
+
+# Convenience name for target.
+oned: src/CMakeFiles/oned.dir/rule
+
+.PHONY : oned
+
+# clean rule for target.
+src/CMakeFiles/oned.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/oned.dir/build.make src/CMakeFiles/oned.dir/clean
+.PHONY : src/CMakeFiles/oned.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/mk2.dir
+
+# All Build rule for target.
+src/CMakeFiles/mk2.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mk2.dir/build.make src/CMakeFiles/mk2.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mk2.dir/build.make src/CMakeFiles/mk2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/munna/dune/dune-integrate/build-cmake/CMakeFiles --progress-num=6,7 "Built target mk2"
+.PHONY : src/CMakeFiles/mk2.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/mk2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/munna/dune/dune-integrate/build-cmake/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mk2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/munna/dune/dune-integrate/build-cmake/CMakeFiles 0
+.PHONY : src/CMakeFiles/mk2.dir/rule
+
+# Convenience name for target.
+mk2: src/CMakeFiles/mk2.dir/rule
+
+.PHONY : mk2
+
+# clean rule for target.
+src/CMakeFiles/mk2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mk2.dir/build.make src/CMakeFiles/mk2.dir/clean
+.PHONY : src/CMakeFiles/mk2.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/dune-integrate.dir

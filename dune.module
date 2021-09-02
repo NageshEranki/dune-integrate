@@ -7,6 +7,6 @@ Module: dune-integrate
 Version: 1.0
 Maintainer: nageswararao.160324@gmail.com
 # Required build dependencies
-Depends: dune-common dune-geometry dune-grid dune-istl dune-localfunctions dune-functions
+Depends: dune-common dune-geometry dune-grid dune-istl dune-localfunctions dune-functions dune-vtk
 # Optional build dependencies
 #Suggests:

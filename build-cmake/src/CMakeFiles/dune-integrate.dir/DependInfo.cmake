@@ -10,21 +10,29 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
+  "ENABLE_GMP=1"
   "ENABLE_QUADMATH=1"
   "ENABLE_SUITESPARSE=1"
   "ENABLE_SUPERLU=1"
-  "ENABLE_TBB=1"
   "ENABLE_UG=1"
+  "ENABLE_VTK_ZLIB=1"
   "HAVE_CONFIG_H"
-  "UG_USE_NEW_DIMENSION_DEFINES"
   "_GLIBCXX_USE_FLOAT128"
-  "_TBB_CPP0X"
   )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
   "../"
+  "/home/munna/dune/dune-common"
+  "/home/munna/dune/dune-geometry"
+  "/home/munna/dune/dune-uggrid"
+  "/home/munna/dune/dune-typetree"
+  "/home/munna/dune/dune-istl"
+  "/home/munna/dune/dune-grid"
+  "/home/munna/dune/dune-localfunctions"
+  "/home/munna/dune/dune-functions"
+  "/home/munna/dune/dune-vtk"
   "/usr/include/suitesparse"
   "/usr/include/superlu"
   )

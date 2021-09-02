@@ -668,6 +668,32 @@ ContinuousUpdate/fast:
 .PHONY : ContinuousUpdate/fast
 
 #=============================================================================
+# Target rules for targets named oned
+
+# Build rule for target.
+oned: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 oned
+.PHONY : oned
+
+# fast build rule for target.
+oned/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/oned.dir/build.make src/CMakeFiles/oned.dir/build
+.PHONY : oned/fast
+
+#=============================================================================
+# Target rules for targets named mk2
+
+# Build rule for target.
+mk2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mk2
+.PHONY : mk2
+
+# fast build rule for target.
+mk2/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mk2.dir/build.make src/CMakeFiles/mk2.dir/build
+.PHONY : mk2/fast
+
+#=============================================================================
 # Target rules for targets named dune-integrate
 
 # Build rule for target.
@@ -759,6 +785,8 @@ help:
 	@echo "... install_python"
 	@echo "... test_python"
 	@echo "... dune-integrate"
+	@echo "... mk2"
+	@echo "... oned"
 .PHONY : help
 
 

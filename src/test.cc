@@ -5,43 +5,34 @@
 # include "config.h"
 #endif
 #include <iostream>
+#include <vector>
+
 #include <dune/common/parallel/mpihelper.hh> // An initializer of MPI
 #include <dune/common/exceptions.hh> // We use exceptions
 
 //Grid includes
 #include <dune/grid/yaspgrid.hh>
+#include <dune/grid/uggrid.hh>
+#include <dune/grid/io/file/vtk/vtkwriter.hh>
+#include <dune/grid/io/file/vtk/subsamplingvtkwriter.hh>
 
 #include <dune/geometry/quadraturerules.hh>
 
-double func(double x)
-{
-	return 3*x*x;
-}
+#include <dune/functions/functionspacebases/lagrangebasis.hh>
+#include <dune/functions/gridfunctions/discreteglobalbasisfunction.hh>
+
+#include <dune/common/fvector.hh>
+#include <dune/istl/io.hh>
+#include <dune/istl/bcrsmatrix.hh>
+#include <dune/istl/solvers.hh>
+#include <dune/istl/preconditioners.hh>
 
 int main(int argc, char** argv)
 {
   try
   {
-	const int dim = 1;
-	typedef Dune::YaspGrid<dim> GridType;
-	GridType grid({1.0},{5});
-	auto gv = grid.leafGridView();
-	double result = 0;
-	for(const auto& entity: elements(gv))
-	{
-		//std::cout << entity.geometry().corner(0) << std::endl;
-		auto gt = entity.type();
-		const auto& quad = Dune::QuadratureRules<double,dim>::rule(gt,2);
-		for(const auto& quadPt: quad)
-		{
-			result += quadPt.weight()*func(quadPt.position());
-			std::cout << quadPt.position() << "," << quadPt.weight() << std::endl;
-		}
-	}
+	  std::cout << "Hello world!" << '\n';
 
-	//std::cout << result << std::endl;
-	
-	return 0;
   }
   catch (Dune::Exception &e){
     std::cerr << "Dune reported error: " << e << std::endl;

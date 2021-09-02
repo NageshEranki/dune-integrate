@@ -1,0 +1,5 @@
+add_executable("dune-integrate" dune-integrate.cc)
+add_executable("mk2" test.cc)
+include_directories(.)
+add_executable("oned" oned.cc extra.hh)
+target_link_dune_default_libraries("dune-integrate")
