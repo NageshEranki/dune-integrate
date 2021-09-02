@@ -1,2 +1,0 @@
-/usr/bin/ar qc libextra.hh.a CMakeFiles/extra.hh.dir/oned.cc.o
-/usr/bin/ranlib libextra.hh.a
