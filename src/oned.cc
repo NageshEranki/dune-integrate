@@ -30,6 +30,9 @@
 #include <dune/istl/solvers.hh>
 #include <dune/istl/preconditioners.hh>
 
+// Foward declarations
+// Refer to definitions for the significance of the functions/classes
+
 template<class T>
 void printqr(const T& quad);
 
@@ -42,7 +45,8 @@ void printsfjac(V& localView, const E& element);
 template<class E>
 void printgeomprop(const E& element);
 
-void useless();
+template<class Entity>
+void printgeomtype(const Entity& e);
 
 template<class BasisType, class ElementType, class MatrixType,  class Quadrature>
 void buildElementMatrix(BasisType& basis, ElementType& element, const Quadrature& quadrule, MatrixType& elemK);
@@ -104,17 +108,15 @@ int main(int argc, char** argv)
 	auto& localBasis = lv.tree().finiteElement().localBasis();
 
 	// Sanity check
-	//printsfeval(lv,*it);
-	//printsfjac(lv,*it);
-	//printgeomprop(*it);
+	printsfeval(lv,*it);
+	printsfjac(lv,*it);
+	printgeomprop(*it);
 
 	// Create global stiffness matrix & global force vector
 	MatrixType K(basis.size(),basis.size(),3,0.2,MatrixType::implicit);
 	VectorType F(basis.size());
 
 	// Create container for element stiffness matrix & element force vector
-	const int test = localBasis.size();
-	std::cout << "test = " << test << "\n";
 	Dune::FieldMatrix<double,2*dim,2*dim> elemK(0);
 	Dune::FieldVector<double,2*dim> elemF(0);
 
@@ -150,6 +152,7 @@ int main(int argc, char** argv)
 	assembleDirichlet(gv, K , F );
 
 	// Experimental!
+	// Lazy implementation of Neumann boundary condition
 	F[0] += 1;
 	//
 	
@@ -163,7 +166,8 @@ int main(int argc, char** argv)
 	Dune::CGSolver<VectorType> cg(lop,pre,1e-8,1000,3);
 	Dune::InverseOperatorResult stat;	
 	VectorType x(basis.size());
-	x = F;
+
+	// Initial guess for the solution
 	x=0;
 	
 	// Solve!
@@ -218,7 +222,7 @@ void buildElementMatrix(BasisType& basis, ElementType& element, const Quadrature
 template<class BasisType, class ElementType, class VectorType,  class Quadrature>
 void buildElementLoadVector1(BasisType& basis, ElementType& element, const Quadrature& quadrule, VectorType& elemF )
 {
-	/// Contribution of force term
+	/// Contribution of forcing term (RHS)
 	/// To element load vector
 	
 	auto lv = basis.localView();
@@ -251,8 +255,8 @@ void assembleDirichlet(const GridViewType& gv, MatrixType& K , VectorType& F )
 			auto dof = indexSet.index(vertex);
 			auto* rowptr = &K[dof];
 
-			// Replace corresponding row in stiffness matrix with
-			// row from identity matrix
+			// Replace that row in stiffness matrix with
+			// corresponding row from identity matrix
 			for(auto ptr = rowptr->begin(); ptr != rowptr->end(); ptr++)
 				*ptr = (dof == ptr.index()) ? 1 : 0;
 
@@ -281,8 +285,8 @@ double dirichletFunc(const CoordinateType& x)
 template<class CoordinateType>
 double f(const CoordinateType& x)
 {
-	//return sin(x[0]);
-	return x[0];
+	//return 1;
+	return 10*x[0];
 }
 
 template<class T>
@@ -296,6 +300,8 @@ double neumannFunc(const T& x)
 template<class T>
 void printqr(const T& quad)
 {
+	// Print out the selected quadrature rules
+	// Part of pre-processing checks
 	std::cout << "Printing quadrature rules:" << '\n';
 	for(int i=0;i<quad.size();i++)
 	{
@@ -351,7 +357,8 @@ void printgeomprop(const E& element)
 	std::cout << geom.integrationElement(geom.local(geom.center())) << '\n';
 	std::cout << "=============================================================\n";
 }
-void useless()
+
+template<class Entity>
+void printgeomtype(const Entity& e)
 {
-	std::cout << "THis function does nothing\n";
 }
