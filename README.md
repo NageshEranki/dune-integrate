@@ -5,4 +5,8 @@ Module that uses the [DUNE](https://www.dune-project.org/) library to solve the 
 Problem statement:
 
 ![Strong form](figs/strong-form.png)
-![Solution](figs/sol.png)
+
+Equivalent weak formulation:
+
+![Weak form](figs/weak-form.png)
+
