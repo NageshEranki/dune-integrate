@@ -10,3 +10,4 @@ Equivalent weak formulation:
 
 ![Weak form](figs/weak-form.png)
 
+# foo
