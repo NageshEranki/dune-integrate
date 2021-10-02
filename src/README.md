@@ -4,24 +4,24 @@ Module that uses the [DUNE](https://www.dune-project.org/) library to solve the 
 
 ## Problem statement:
 
-![Strong form](figs/strong-form.png)
+![Strong form](../figs/strong-form.png)
 
 ## Equivalent weak formulation:
 
-![Weak form](figs/weak-form.png)
+![Weak form](../figs/weak-form.png)
 
 ## Choice of function spaces:
 
 In this elementary problem, *linear, first-order Lagrangian* elements are used. To illustrate, the following figure shows the plots of the shape functions on the reference element [0,1]
 
-![Shape funcs](figs/shape-funcs.png)
+![Shape funcs](../figs/shape-funcs.png)
 
 ## Solution
 
 The analytical solution is given as follows:
 
-![function](figs/function.png)
+![function](../figs/function.png)
 
 The numerical solution obtained is compared with the analytical solution as shown below:
-![Solution](figs/sol.png)
+![Solution](../figs/sol.png)
 
