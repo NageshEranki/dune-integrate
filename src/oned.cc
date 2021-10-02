@@ -34,38 +34,50 @@
 // Refer to definitions for the significance of the functions/classes
 
 template<class T>
-void printqr(const T& quad);
+void printqr(const T& quad);  // Print quadrature rules to screen
 
 template<class V, class E>
-void printsfeval(V& localView, const E& element);
+void printsfeval(V& localView, const E& element);  // Print shape function values at each node
 
 template<class V, class E>
-void printsfjac(V& localView, const E& element);
+void printsfjac(V& localView, const E& element);   // Print derivative of shape functions at element center
 
 template<class E>
-void printgeomprop(const E& element);
+void printgeomprop(const E& element);  // Print integration transformation rule and jacobian of transformation function 
 
 template<class Entity>
-void printgeomtype(const Entity& e);
+void printgeomtype(const Entity& e);  // No implementation yet
 
-template<class BasisType, class ElementType, class MatrixType,  class Quadrature>
+
+// Compute stiffness matrix for a given element
+template<class BasisType, class ElementType, class MatrixType,  class Quadrature> 
 void buildElementMatrix(BasisType& basis, ElementType& element, const Quadrature& quadrule, MatrixType& elemK);
 
 template<class CoordinateType>
-double f(const CoordinateType& x);
+double f(const CoordinateType& x); // RHS of the PDE, i.e. source term
 
+
+// Compute load vector for a given element
 template<class BasisType, class ElementType, class VectorType,  class Quadrature>
 void buildElementLoadVector1(BasisType& basis, ElementType& element, const Quadrature& quadrule, VectorType& elemF);
 
+
+// Impose Dirichlet boundary conditions on Dirichlet nodes
 template<class GridViewType, class MatrixType, class VectorType>
 void assembleDirichlet(const GridViewType& gv, MatrixType& K , VectorType& F );
 
+
+// Identify Dirichlet nodes
 template<class CoordinateType>
 bool isDirichlet(const CoordinateType& x);
 
+
+// Value of the nodal solution at dirichlet boundaries
 template<class CoordinateType>
 double dirichletFunc(const CoordinateType& x);
 
+
+// NOT IMPLEMENTED
 template<class T>
 double neumannFunc(const T& x);
 
@@ -83,7 +95,7 @@ int main(int argc, char** argv)
 	
 	// Structured grid from YaspGrid
 	typedef Dune::YaspGrid<dim> GridType;
-	GridType grid({1.0},{10});
+	GridType grid({1.0},{3});
 
 	//Obtain view into grid
 	typedef GridType::LeafGridView GridView;
@@ -151,7 +163,7 @@ int main(int argc, char** argv)
 	//Assemble dirichlet condition here
 	assembleDirichlet(gv, K , F );
 
-	// Experimental!
+	// WARNING: Experimental!
 	// Lazy implementation of Neumann boundary condition
 	F[0] += 1;
 	//
