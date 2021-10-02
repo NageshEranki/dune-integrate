@@ -12,7 +12,7 @@ Module that uses the [DUNE](https://www.dune-project.org/) library to solve the 
 
 ## Choice of function spaces:
 
-In this elementary problem, *linear, first-order Lagrangian* elements are used. To illustrate, the following figure shows the plots of the shape functions on the reference element.
+In this elementary problem, *linear, first-order Lagrangian* elements are used. To illustrate, the following figure shows the plots of the shape functions on the reference element [0,1]
 
 ![Shape funcs](figs/shape-funcs.png)
 
