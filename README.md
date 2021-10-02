@@ -16,6 +16,12 @@ In this elementary problem, *linear, first-order Lagrangian* elements are used. 
 
 ![Shape funcs](figs/shape-funcs.png)
 
-Therefore, the trial/test function spaces will be as follows:
+## Solution
 
+The analytical solution is given as follows:
+
+![function](figs/function.png)
+
+The numerical solution obtained is compared with the analytical solution as shown below:
+![Solution](figs/sol.png)
 
