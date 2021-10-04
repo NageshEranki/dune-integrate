@@ -1,5 +1,5 @@
 #add_executable("dune-integrate" dune-integrate.cc)
-#add_executable("beam" beam.cc)
+add_executable("beam" beam.cc)
 add_executable("oned" oned.cc)
 #add_executable("testing" test.cc)
 target_link_dune_default_libraries("oned")
